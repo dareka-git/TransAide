@@ -1,5 +1,5 @@
 TransAIde is a plugin for the Trados Studio (CAT tool).
-TransAIde is designed to allow translators easily working with various GenAI in any way (chat, projects, API, agentic AI, variuos automation scenarios). 
+TransAIde is designed to allow translators easily working with various GenAI in any way (chat, projects, API, agentic AI, various automation scenarios). 
 The plugin is in an early stage of development and not all planned functions have been programmed yet.
 
 The basic features of the plugin:
