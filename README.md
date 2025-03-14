@@ -19,4 +19,4 @@ The most important planned functions:
 Export of source and target text (translations) from Trados Studio to a text file, e.g. in CSV format or as alternating lines.
 Export of terminology from online termbases. Currently, only offline (local) termbases are supported.
 
-More information will be available soon on my website: htts://posteditacat.xyz (dareka@posteditacat.xyz)
+More information will be available soon on my website: [htts://posteditacat.xyz](https://posteditacat.xyz/en/) (dareka@posteditacat.xyz)
