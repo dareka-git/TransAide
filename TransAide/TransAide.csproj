@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1D1312D8-8A1B-4BC7-97C8-DEDA46CCD535}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TransAide</RootNamespace>
+    <AssemblyName>TransAide</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PluginDeploymentPath>$(AppData)\Trados\Trados Studio\18\Plugins</PluginDeploymentPath>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(AppData)\Trados\Trados Studio\18\Plugins\Packages\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Sdl.Core.Globalization, Version=1.8.0.0, Culture=neutral, PublicKeyToken=c28cdb26c445c888, processorArchitecture=MSIL">
+      <HintPath>$(MSBuildProgramFiles32)\Trados\Trados Studio\Studio18\Sdl.Core.Globalization.dll</HintPath>
+    </Reference>
+    <Reference Include="Sdl.Core.Globalization.Async, Version=1.8.0.0, Culture=neutral, PublicKeyToken=c28cdb26c445c888, processorArchitecture=MSIL">
+      <HintPath>$(MSBuildProgramFiles32)\Trados\Trados Studio\Studio18\Sdl.Core.Globalization.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="Sdl.Desktop.IntegrationApi">
+      <HintPath>$(MSBuildProgramFiles32)\Trados\Trados Studio\Studio18\Sdl.Desktop.IntegrationApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Sdl.Desktop.IntegrationApi.Extensions">
+      <HintPath>$(MSBuildProgramFiles32)\Trados\Trados Studio\Studio18\Sdl.Desktop.IntegrationApi.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Sdl.FileTypeSupport.Framework.Core">
+      <HintPath>$(MSBuildProgramFiles32)\Trados\Trados Studio\Studio18\Sdl.FileTypeSupport.Framework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sdl.FileTypeSupport.Framework.Core.Utilities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c28cdb26c445c888, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>$(MSBuildProgramFiles32)\Trados\Trados Studio\Studio18\Sdl.FileTypeSupport.Framework.Core.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Sdl.FileTypeSupport.Framework.Implementation">
+      <HintPath>$(MSBuildProgramFiles32)\Trados\Trados Studio\Studio18\Sdl.FileTypeSupport.Framework.Implementation.dll</HintPath>
+    </Reference>
+    <Reference Include="Sdl.MultiTerm.TMO.Interop, Version=18.0.0.0, Culture=neutral, PublicKeyToken=c28cdb26c445c888, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>$(MSBuildProgramFiles32)\Trados\Trados Studio\Studio18\Sdl.MultiTerm.TMO.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Sdl.ProjectAutomation.Core">
+      <HintPath>$(MSBuildProgramFiles32)\Trados\Trados Studio\Studio18\Sdl.ProjectAutomation.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sdl.ProjectAutomation.FileBased">
+      <HintPath>$(MSBuildProgramFiles32)\Trados\Trados Studio\Studio18\Sdl.ProjectAutomation.FileBased.dll</HintPath>
+    </Reference>
+    <Reference Include="Sdl.ProjectAutomation.Settings">
+      <HintPath>$(MSBuildProgramFiles32)\Trados\Trados Studio\Studio18\Sdl.ProjectAutomation.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Sdl.Terminology.TerminologyProvider.Core, Version=18.0.0.0, Culture=neutral, PublicKeyToken=c28cdb26c445c888" />
+    <Reference Include="Sdl.TranslationStudioAutomation.IntegrationApi">
+      <HintPath>$(MSBuildProgramFiles32)\Trados\Trados Studio\Studio18\Sdl.TranslationStudioAutomation.IntegrationApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Sdl.TranslationStudioAutomation.IntegrationApi.Extensions">
+      <HintPath>$(MSBuildProgramFiles32)\Trados\Trados Studio\Studio18\Sdl.TranslationStudioAutomation.IntegrationApi.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="Converter\BoolValueNegationConverter.cs" />
+    <Compile Include="Converter\EnumBooleanConverter.cs" />
+    <Compile Include="Enum\DestinationSegmentTypeEnum.cs" />
+    <Compile Include="Enum\ExportTypeEnum.cs" />
+    <Compile Include="Enum\ImportFileContentEnum.cs" />
+    <Compile Include="Enum\ImportFromEnum.cs" />
+    <Compile Include="Enum\ImportToEnum.cs" />
+    <Compile Include="Enum\ImportTypeEnum.cs" />
+    <Compile Include="Enum\SegmentStatusEnum.cs" />
+    <Compile Include="Enum\SourceSegmentTypeEnum.cs" />
+    <Compile Include="Enum\TermRecognitionMethodEnum.cs" />
+    <Compile Include="Enum\TextFormatEnum.cs" />
+    <Compile Include="Extension\StringExtension.cs" />
+    <Compile Include="Helper\DiffMatchPatch.cs" />
+    <Compile Include="Helper\FileManager.cs" />
+    <Compile Include="Helper\JsonManager.cs" />
+    <Compile Include="Model\DocumentFile.cs" />
+    <Compile Include="Model\EnumExtensionMethods.cs" />
+    <Compile Include="Model\GlossaryTerm.cs" />
+    <Compile Include="Model\GlossaryTermCollection.cs" />
+    <Compile Include="Model\ModelBase.cs" />
+    <Compile Include="Model\Multiterm\EntryField.cs" />
+    <Compile Include="Model\Multiterm\TermEntry.cs" />
+    <Compile Include="Model\Multiterm\TermHit.cs" />
+    <Compile Include="Model\TermbaseSettings.cs" />
+    <Compile Include="Model\TransAideExportConfig.cs" />
+    <Compile Include="Model\TransAideImportConfig.cs" />
+    <Compile Include="Model\TransAideTermsExportConfig.cs" />
+    <Compile Include="Model\TranslationUnit.cs" />
+    <Compile Include="Model\TranslationUnitList.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\ExportJSON.cs" />
+    <Compile Include="Service\ExportSourceOnly.cs" />
+    <Compile Include="Service\ExportGlossaryTerms.cs" />
+    <Compile Include="Service\ImportJSON.cs" />
+    <Compile Include="Service\ImportTargetOnly.cs" />
+    <Compile Include="Service\ImportTargetText.cs" />
+    <Compile Include="Service\MultitermProvider.cs" />
+    <Compile Include="Service\SegmentVisitor.cs" />
+    <Compile Include="Service\UpdateTargetSegment.cs" />
+    <Compile Include="Settings\Constants.cs" />
+    <Compile Include="TransAideAction.cs" />
+    <Compile Include="TransAideRibbonGroup.cs" />
+    <Compile Include="TransAideController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\PluginProperties.cs" />
+    <Compile Include="ViewModel\ExportViewModel.cs" />
+    <Compile Include="ViewModel\ImportViewModel.cs" />
+    <Compile Include="ViewModel\TermsExportViewModel.cs" />
+    <Compile Include="ViewModel\TransAideEditorViewModel.cs" />
+    <Compile Include="View\ExportView.xaml.cs">
+      <DependentUpon>ExportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ImportView.xaml.cs">
+      <DependentUpon>ImportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TermsExportView.xaml.cs">
+      <DependentUpon>TermsExportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TransAideEditorView.xaml.cs">
+      <DependentUpon>TransAideEditorView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\arrow_black_up.png" />
+    <Resource Include="Resources\arrow_blue_down.png" />
+    <Resource Include="Resources\arrow_blue_up.png" />
+    <Resource Include="Resources\arrow_orange_up.png" />
+    <Resource Include="Resources\arrow_teal_down.png" />
+    <Resource Include="Resources\arrow_teal_up.png" />
+    <Resource Include="Resources\folder.png" />
+    <Resource Include="Resources\info.png" />
+    <Resource Include="Resources\json_file.png" />
+    <Resource Include="Resources\trans_aide_logo_circle_256.png" />
+    <Resource Include="Resources\trans_aide_logo_circle_32.png" />
+    <Resource Include="Resources\trans_aide_logo_circle_64.png" />
+    <Resource Include="Resources\uia_view.png" />
+    <Resource Include="Resources\apply_ai.png" />
+    <Resource Include="Resources\attach.png" />
+    <Resource Include="Resources\decrease.png" />
+    <Resource Include="Resources\detach.png" />
+    <Resource Include="Resources\increase.png" />
+    <Content Include="Resources\trans_aide_logo_circle_32.ico" />
+    <EmbeddedResource Include="Resources\arrow_blue_down.ico" />
+    <Content Include="Resources\arrow_blue_up.ico" />
+    <Content Include="Resources\arrow_orange_up.ico" />
+    <Content Include="Resources\trans_aide_logo_circle_64.ico" />
+    <Content Include="transaide.ico" />
+    <Content Include="transaide_icon.ico" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PluginResources.resx" />
+    <Content Include="pluginpackage.manifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DArek.snk" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf">
+      <Version>1.1.135</Version>
+    </PackageReference>
+    <PackageReference Include="Sdl.Core.PluginFramework">
+      <Version>2.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="Sdl.Core.PluginFramework.Build">
+      <Version>18.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.Text.Json">
+      <Version>6.0.11</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="View\ExportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ImportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TermsExportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TransAideEditorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <CreatePluginPackage>true</CreatePluginPackage>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>DArek.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>transaide_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,285 @@
+﻿<UserControl x:Class="TransAide.View.TransAideEditorView"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+            xmlns:sys="clr-namespace:System;assembly=mscorlib"
+            xmlns:local="clr-namespace:TransAide.ViewModel"
+            xmlns:enum="clr-namespace:TransAide.Enum"
+            xmlns:conv="clr-namespace:TransAide.Converter"
+            mc:Ignorable="d" 
+            d:DataContext="{d:DesignInstance local:TransAideEditorViewModel}"
+            d:DesignHeight="275" d:DesignWidth="900">
+    <UserControl.Resources>
+        <conv:BoolValueNegationConverter x:Key="boolValueNegationConverter"/>
+        <Style TargetType="Border">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#4b4b4c"/>
+            <Setter Property="Margin" Value="0"/>
+        </Style>
+        <Style x:Key="VerticalCenter"  TargetType="TextBox">
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="SliderTextBox" TargetType="TextBox">
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+
+        </Style>
+        <Style x:Key="LargeTextBoxStyle" TargetType="TextBox">
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="AcceptsReturn" Value="true" />
+            <Setter Property="AcceptsTab" Value="true" />
+            <Setter Property="VerticalScrollBarVisibility" Value="Visible"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="FontFamily" Value="Consolas"/>
+            <Setter Property="FontSize" Value="14px"/>
+        </Style>
+        <Style x:Key="TitleStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style x:Key="ListBoxStyle" TargetType="ListBox">
+            <Setter Property="BorderBrush" Value="#00a89f"/>
+            <Setter Property="SelectionMode" Value="Single"/>
+        </Style>
+        <Style x:Key="ListBoxItemLightTextBlock" TargetType="TextBlock">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="ListBoxItemDarkTextBlock" TargetType="TextBlock">
+            <Setter Property="Background" Value="#003c7f"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="DarkLabelWide" TargetType="Label">
+            <Setter Property="Background" Value="#00a89f"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="DarkLabel" TargetType="Label">
+            <Setter Property="Width" Value="75"/>
+            <Setter Property="Background" Value="#00a89f"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="DarkLabelFill" TargetType="Label">
+            <Setter Property="Background" Value="#00a89f"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="LightLabel" TargetType="Label">
+            <Setter Property="Width" Value="75"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="#00a89f"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="InfoTextBlock" TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style x:Key="StatusBarTextBlock" TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="1,3,0,0"/>
+            <Setter Property="FontSize" Value="11px"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Background" Value="Gold"/>
+        </Style>
+
+        <Style x:Key="StatusBarBoldTextBlock" TargetType="TextBlock">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="1,3,0,0"/>
+            <Setter Property="FontSize" Value="11px"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Background" Value="Gold"/>
+        </Style>
+        <Style x:Key="AccentLabel" TargetType="Label">
+            <Setter Property="Background" Value="#003c7f"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="DarkButton" TargetType="Button">
+            <Setter Property="Background" Value="#00a89f"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Height" Value="25"/>
+        </Style>
+        <Style x:Key="LightButton" TargetType="Button">
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Height" Value="25"/>
+        </Style>
+        <Style x:Key="LightButtonFill" TargetType="Button">
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="HorizontalSplitterStyle" TargetType="GridSplitter">
+            <Setter Property="Background" Value="#b2d8d8"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Height" Value="4"/>
+            <Setter Property="Margin" Value="4"/>
+        </Style>
+        <Style x:Key="VerticalSplitterStyle" TargetType="GridSplitter">
+            <Setter Property="Background" Value="#b2d8d8"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="Width" Value="4"/>
+            <Setter Property="Margin" Value="4"/>
+        </Style>
+        <Style x:Key="TextColumnStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="AcceptsReturn" Value="true" />
+            <Setter Property="AcceptsTab" Value="true" />
+            <Setter Property="HorizontalScrollBarVisibility" Value="Auto" />
+            <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+            <Setter Property="MaxHeight" Value="400px"/>
+            <Setter Property="MinHeight" Value="40px"/>
+            <Setter Property="SelectionBrush" Value="#4b4b4c"/>
+        </Style>
+        <Style x:Key="DataGridStyle" TargetType="DataGrid">
+            <Setter Property="RowHeaderWidth" Value="25"/>
+            <Setter Property="HeadersVisibility" Value="All"/>
+            <Setter Property="AlternatingRowBackground" Value="#F6F6F6"/>
+            <Setter Property="GridLinesVisibility" Value="None"/>
+            <Setter Property="SelectionMode" Value="Extended"/>
+            <Setter Property="SelectionUnit" Value="CellOrRowHeader"/>
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="FontFamily" Value="Consolas"/>
+            <Setter Property="VerticalScrollBarVisibility" Value="Visible" />
+        </Style>
+        <Style x:Key="SliderStyle" TargetType="Slider">
+            <Setter Property="IsSnapToTickEnabled" Value="True"/>
+            <Setter Property="TickPlacement" Value="BottomRight"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </UserControl.Resources>
+    <UserControl.InputBindings>
+        <KeyBinding Key="P" Modifiers="Ctrl+Shift" Command="{Binding ApplyTargetCommand}"/>
+        <KeyBinding Key="P" Modifiers="Control" Command="{Binding ApplyTargetCommand}"/>
+    </UserControl.InputBindings>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="27"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="75"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ToolBarTray Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" DockPanel.Dock="Top" Background="#f6f6f6">
+            <ToolBar Name="TransAideToolbar" Height="27" Background="#f6f6f6">
+                <Button Command="{Binding OpenExportSegmentsWindowCommand}" ToolTip="Export segments content to AI.">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/TransAide;component/Resources/arrow_blue_up.png" />
+                        <TextBlock Text="Export" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </Button>
+                <Separator />
+                <Button Command="{Binding OpenExportTermsWindowCommand}" ToolTip="Export terms to AI.">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/TransAide;component/Resources/arrow_orange_up.png" />
+                        <TextBlock Text="Export Terms" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </Button>
+                <Separator />
+                <Button Command="{Binding OpenImportWindowCommand}" ToolTip="Import segments from AI.">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/TransAide;component/Resources/arrow_blue_down.png" />
+                        <TextBlock Text="Import" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </Button>
+                <Separator />
+                <Button Command="{Binding SelectJsonFileCommand}" ToolTip="Select JSON file with translations.">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/TransAide;component/Resources/json_file.png"/>
+                        <TextBlock Text="Select File" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </Button>
+                <Separator />
+                <Button Command="{Binding OpenFolderCommand}" ToolTip="Open project folder.">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/TransAide;component/Resources/folder.png"/>
+                        <TextBlock Text="Open Folder" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </Button>
+                <Separator/>
+                <Button Command="{Binding AttachJsonFileCommand}" IsEnabled="{Binding IsFileAttached, Converter={StaticResource boolValueNegationConverter}, Mode=OneWay}"  ToolTip="Attach selected JSON file.">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/TransAide;component/Resources/attach.png"/>
+                        <TextBlock Text="Attach File" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </Button>
+                <Button Command="{Binding DetachJsonFileCommand}" IsEnabled="{Binding IsFileAttached, Mode=OneWay}" ToolTip="Detach JSON file.">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/TransAide;component/Resources/detach.png"/>
+                        <TextBlock Text="Detach File" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </Button>
+                <Separator/>
+                <Button Command="{Binding OpenHomePageCommand}" ToolTip="TransAide home page.">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/TransAide;component/Resources/info.png"/>
+                        <TextBlock Text="Home Page" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </Button>
+                <Separator/>
+                <Button Command="{Binding ApplyTargetCommand}" ToolTip="Apply translation." Width="150">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/TransAide;component/Resources/apply_ai.png"/>
+                        <TextBlock Text="Apply" VerticalAlignment="Center" FontWeight="Bold" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+        <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource DarkLabelFill}" Content="Source" FontWeight="DemiBold"/>
+        <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource DarkLabelFill}" Content="Target" FontWeight="DemiBold"/>
+        <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource DarkLabelFill}" Content="Comments" FontWeight="DemiBold"/>
+        <Label Grid.Row="4" Grid.Column="0" Style="{StaticResource DarkLabelFill}" Content="Diff" FontWeight="DemiBold"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource LargeTextBoxStyle}" x:Name="txtSource" 
+                 Text="{Binding Tu.Source}" IsReadOnly="True"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="0" Style="{StaticResource LargeTextBoxStyle}" x:Name="txtNewTarget" 
+                 Text="{Binding Tu.Target}" IsReadOnly="False"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="0" Style="{StaticResource LargeTextBoxStyle}" x:Name="txtComments" 
+                 Text="{Binding Tu.Comment}" IsReadOnly="True"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="0" Style="{StaticResource LargeTextBoxStyle}" x:Name="txtDiff" 
+                 Text="{Binding DiffText}" IsReadOnly="True"/>
+        <WrapPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Background="Gold"  VerticalAlignment="Stretch">
+            <TextBlock Text="Seg: " Width="25" Style="{StaticResource StatusBarTextBlock}" HorizontalAlignment="Left"/>
+            <TextBlock Text="{Binding Tu.SegmentId}" Width="35" Style="{StaticResource StatusBarBoldTextBlock}" HorizontalAlignment="Left"/>
+            <TextBlock Text="File: " Width="25" Style="{StaticResource StatusBarTextBlock}" HorizontalAlignment="Left"/>
+            <TextBlock Text="{Binding Tu.FileName}" Width="100" Style="{StaticResource StatusBarTextBlock}" HorizontalAlignment="Left"/>
+            <TextBlock Text="Match: " Width="35"  Style="{StaticResource StatusBarTextBlock}" HorizontalAlignment="Left"/>
+            <TextBlock Text="{Binding Tu.Match}" Width="50" Style="{StaticResource StatusBarBoldTextBlock}" HorizontalAlignment="Left"/>
+            <TextBlock Text="Status: " Width="35" Style="{StaticResource StatusBarTextBlock}" HorizontalAlignment="Left"/>
+            <TextBlock Text="{Binding Tu.Status}" Width="50" Style="{StaticResource StatusBarBoldTextBlock}" HorizontalAlignment="Left"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="5" Grid.Column="4" Background="Gold"  VerticalAlignment="Stretch" HorizontalAlignment="Right">
+            <TextBlock Text="File: " Style="{StaticResource StatusBarTextBlock}" HorizontalAlignment="Right"/>
+            <TextBlock Text="{Binding FileStatusBarLabel}" Style="{StaticResource StatusBarBoldTextBlock}" HorizontalAlignment="Right"/>
+        </WrapPanel>
+
+        <WrapPanel Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3"  Background="#f6f6f6" VerticalAlignment="Stretch">
+            <TextBlock Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"  Background="#f6f6f6" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                Text="Trans AIde v0.1 by DArek (Post-edit a CAT)" 
+                Margin="1,3,0,0" FontWeight="Bold" Foreground="#003c7f"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="6" Grid.Column="2" Background="#f6f6f6" VerticalAlignment="Stretch" HorizontalAlignment="Right">
+            <TextBlock Grid.Row="6" Grid.Column="2" Background="#f6f6f6" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                Text="Enabling AI for individual translators and small teams " 
+                Margin="1,3,0,0" FontWeight="Bold" Foreground="#003c7f"/>
+        </WrapPanel>
+        
+       
+    </Grid>
+</UserControl>
