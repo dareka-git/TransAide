@@ -20,3 +20,17 @@ Export of source and target text (translations) from Trados Studio to a text fil
 Export of terminology from online termbases. Currently, only offline (local) termbases are supported.
 
 More information will be available soon on my website: [htts://posteditacat.xyz](https://posteditacat.xyz/en/) (dareka@posteditacat.xyz)
+
+![image](https://github.com/user-attachments/assets/71a0168a-f9a2-48ec-ab45-46e983c6a64b)
+
+![image](https://github.com/user-attachments/assets/fdaa1ce8-b64b-411a-b298-05581c7d8134)
+
+![image](https://github.com/user-attachments/assets/7262ade0-70a0-4236-a650-cef7d2ba4371)
+
+![image](https://github.com/user-attachments/assets/d896d03e-8d6c-480a-aa70-8e38422a885e)
+
+![image](https://github.com/user-attachments/assets/b69be996-ba60-4d20-8868-2e78d1a99135)
+
+![image](https://github.com/user-attachments/assets/1b1bd728-e0df-47d1-b737-c527cd89b844)
+
+
